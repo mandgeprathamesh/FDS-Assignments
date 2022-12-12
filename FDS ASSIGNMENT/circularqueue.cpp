@@ -29,6 +29,20 @@ class circularqueue{
         }
     }
 
+    void isempty(){
+        if(front==-1){
+            if(rear==-1){
+                cout<<"queue is empty";
+            }
+        }
+    }
+
+    void isfull(){
+        if(rear==size-1){
+            cout<<"queue is full";
+        }
+    }
+
     void dequeue(){
         if(front==-1){
             cout<<"underflow\n";
@@ -64,7 +78,7 @@ int main(){
     circularqueue s;
     int ch;
     while(1){
-        cout<<"\n0:to exit\n1:to enqueue\n2:to dequeue\n3:to display the queue\n";
+        cout<<"\n0:to exit\n1:to enqueue\n2:to dequeue\n3:to display the queue\n4:to check is queue full\n5:to check if queue is empty\n";
         cin>>ch;
         switch(ch){
             case 1:{
@@ -78,7 +92,16 @@ int main(){
             case 3:{
                     s.print();
                     break;
+                    }
+            case 4:{
+                    s.isfull();
+                    break;
+                    }
+            case 5:{
+                    s.isempty();
+                    break;
                     }                
+
         }
     }
 }
